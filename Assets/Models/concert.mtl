@@ -1,0 +1,91 @@
+# Exported from Nomad Sculpt
+
+newmtl spotlight_initialShadingGroup
+ Kd 1 1 1
+ map_Kd textures/spotlight_initialShadingGroup-color.png
+ map_metallic textures/spotlight_initialShadingGroup-roughness_metalness.png
+ map_roughness textures/spotlight_initialShadingGroup-roughness_roughness.png
+
+newmtl Full_Speaker_Material__46
+ Kd 1 1 1
+ map_Kd textures/Full_Speaker_Material__46-color.png
+ map_metallic textures/Full_Speaker_Material__46-roughness_metalness.png
+ map_roughness textures/Full_Speaker_Material__46-roughness_roughness.png
+
+newmtl Material__2
+ Kd 1 1 1
+ map_Kd textures/Material__2-color.png
+ map_metallic textures/Material__2-roughness_metalness.png
+ map_roughness textures/Material__2-roughness_roughness.png
+
+newmtl speaker_USD_Materials_material_0
+ Kd 1 1 1
+ map_Kd textures/speaker_USD_Materials_material_0-color.png
+ map_metallic textures/speaker_USD_Materials_material_0-roughness_metalness.png
+ map_roughness textures/speaker_USD_Materials_material_0-roughness_roughness.png
+
+newmtl speaker_USD_Materials_material_1
+ Kd 1 1 1
+ map_Kd textures/speaker_USD_Materials_material_1-color.png
+ map_metallic textures/speaker_USD_Materials_material_1-roughness_metalness.png
+ map_roughness textures/speaker_USD_Materials_material_1-roughness_roughness.png
+
+newmtl speaker_USD_Materials_material_2
+ Kd 1 1 1
+ map_Kd textures/speaker_USD_Materials_material_2-color.png
+ map_metallic textures/speaker_USD_Materials_material_2-roughness_metalness.png
+ map_roughness textures/speaker_USD_Materials_material_2-roughness_roughness.png
+
+newmtl Full_Speaker_wire_134006006
+ Kd 1 1 1
+ map_Kd textures/Full_Speaker_wire_134006006-color.png
+ map_metallic textures/Full_Speaker_wire_134006006-roughness_metalness.png
+ map_roughness textures/Full_Speaker_wire_134006006-roughness_roughness.png
+
+newmtl speaker_USD_Materials_material_3
+ Kd 1 1 1
+ map_Kd textures/speaker_USD_Materials_material_3-color.png
+ map_metallic textures/speaker_USD_Materials_material_3-roughness_metalness.png
+ map_roughness textures/speaker_USD_Materials_material_3-roughness_roughness.png
+
+newmtl wire_086086086
+ Kd 1 1 1
+ map_Kd textures/wire_086086086-color.png
+ map_metallic textures/wire_086086086-roughness_metalness.png
+ map_roughness textures/wire_086086086-roughness_roughness.png
+
+newmtl lambert1
+ Kd 1 1 1
+ map_Kd textures/lambert1-color.png
+ map_metallic textures/lambert1-roughness_metalness.png
+ map_roughness textures/lambert1-roughness_roughness.png
+
+newmtl mat0_Sphere
+ Kd 1 1 1
+ map_Kd textures/mat0_Sphere-color.png
+ map_metallic textures/mat0_Sphere-roughness_metalness.png
+ map_roughness textures/mat0_Sphere-roughness_roughness.png
+
+newmtl mat0_Box
+ Kd 1 1 1
+ map_Kd textures/mat0_Box-color.png
+ map_metallic textures/mat0_Box-roughness_metalness.png
+ map_roughness textures/mat0_Box-roughness_roughness.png
+
+newmtl mat1_Sphere
+ Kd 1 1 1
+ map_Kd textures/mat1_Sphere-color.png
+ map_metallic textures/mat1_Sphere-roughness_metalness.png
+ map_roughness textures/mat1_Sphere-roughness_roughness.png
+
+newmtl mat0_Cylinder
+ Kd 1 1 1
+ map_Kd textures/mat0_Cylinder-color.png
+ map_metallic textures/mat0_Cylinder-roughness_metalness.png
+ map_roughness textures/mat0_Cylinder-roughness_roughness.png
+
+newmtl mat1_Box
+ Kd 1 1 1
+ map_Kd textures/mat1_Box-color.png
+ map_metallic textures/mat1_Box-roughness_metalness.png
+ map_roughness textures/mat1_Box-roughness_roughness.png
