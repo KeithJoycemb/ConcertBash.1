@@ -41,7 +41,7 @@ public class AudioLoudnessTester : MonoBehaviour
 
             clipLoudness *= sizeFactor;
             clipLoudness = Mathf.Clamp(clipLoudness, minSize, maxSize);
-            sprite.transform.localScale = new Vector3(clipLoudness+44, 23, 1);
+            sprite.transform.localScale = new Vector3(clipLoudness, clipLoudness,clipLoudness);
         }
     }
 }
