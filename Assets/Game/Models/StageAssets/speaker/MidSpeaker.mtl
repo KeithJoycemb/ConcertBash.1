@@ -1,0 +1,35 @@
+newmtl my_projectspeaker:mat0_Box
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd mat0_Box-color.png
+Ni 1.00
+newmtl my_projectspeaker:mat0_Cylinder
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd mat0_Cylinder-color.png
+Ni 1.00
+newmtl my_projectspeaker:mat0_Sphere
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd mat0_Sphere-color.png
+Ni 1.00
+newmtl my_projectspeaker:mat1_Box
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd mat1_Box-color.png
+Ni 1.00
+newmtl my_projectspeaker:mat1_Sphere
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd mat1_Sphere-color.png
+Ni 1.00
