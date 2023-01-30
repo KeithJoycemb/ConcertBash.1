@@ -20,7 +20,7 @@ namespace Game
         {
             if (typePlay == true && mute == false)
             {
-                typeAudio.mute = !typeAudio.mute;
+                typeAudio.mute = false;
             }
 
         }
