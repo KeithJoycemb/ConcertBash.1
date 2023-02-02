@@ -8,12 +8,13 @@ public class ParamCube : MonoBehaviour
     public int band;
     public float startScale, scaleMultiplier;
     public bool useBuffer;
+    Material material;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        material = GetComponent<MeshRenderer>().materials[0]; 
     }
 
     // Update is called once per frame
@@ -22,11 +23,15 @@ public class ParamCube : MonoBehaviour
 
         if (useBuffer) 
         { 
-        transform.localScale = new Vector3(transform.localScale.x, (AudioPeer.bandBuffer[band] *scaleMultiplier)+ startScale, transform.localScale.z);
+            transform.localScale = new Vector3(transform.localScale.x, (AudioPeer.audioBandBuffer[band] *scaleMultiplier)+ startScale, transform.localScale.z);
+            Color color = new Color(AudioPeer.audioBandBuffer[band], AudioPeer.audioBandBuffer[band], AudioPeer.audioBandBuffer[band]);
+            material.SetColor("EmissionColor", color);
         }
         if (!useBuffer)
         {
-            transform.localScale = new Vector3(transform.localScale.x, (AudioPeer.freqBand[band] * scaleMultiplier) + startScale, transform.localScale.z);
+            transform.localScale = new Vector3(transform.localScale.x, (AudioPeer.audioBand[band] * scaleMultiplier) + startScale, transform.localScale.z);
+            Color color = new Color(AudioPeer.audioBand[band], AudioPeer.audioBand[band], AudioPeer.audioBand[band]);
+            material.SetColor("EmissionColor", color);
         }
     }
 }
