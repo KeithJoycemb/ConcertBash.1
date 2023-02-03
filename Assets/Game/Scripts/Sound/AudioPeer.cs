@@ -6,7 +6,8 @@ public class AudioPeer : MonoBehaviour
 {
 
     AudioSource _audioSource;
-    public static float[] _samples = new float[512];
+    public static float[] _samplesLeft = new float[512];
+    public static float[] _samplesRight = new float[512];
     float[] freqBand = new float[8];
     float[] bandBuffer = new float[8];
     float[] bufferDecrease = new float[8];
@@ -18,6 +19,10 @@ public class AudioPeer : MonoBehaviour
     public static float amplitude, amplitudeBuffer;
     float amiplitudeHighest;
     public float audioProfile;
+
+    public enum _channel { Stereo, Left, Right };
+    public _channel channel = new _channel();
+
 
     // Start is called before the first frame update
     void Start()
@@ -80,7 +85,8 @@ public class AudioPeer : MonoBehaviour
 
     void GetSpectrumAudioSource()
     {
-        _audioSource.GetSpectrumData(_samples, 0,FFTWindow.Blackman);
+        _audioSource.GetSpectrumData(_samplesLeft, 0,FFTWindow.Blackman);
+        _audioSource.GetSpectrumData(_samplesRight, 1, FFTWindow.Blackman);
     }
 
     void BandBuffer()
@@ -118,7 +124,18 @@ public class AudioPeer : MonoBehaviour
             }
             for(int j = 0;j<sampleCount;j++)
             {
-                average += _samples[count] * (count + 1);
+                if(channel== _channel.Stereo)
+                { 
+                average += _samplesLeft[count] + _samplesRight[count] * (count + 1);
+                }
+                if (channel == _channel.Left)
+                {
+                    average += _samplesLeft[count]  * (count + 1);
+                }
+                if (channel == _channel.Right)
+                {
+                    average +=  _samplesRight[count] * (count + 1);
+                }
                 count++;
             }
             average /= count;

@@ -30,7 +30,7 @@ public class Instatiate512Cubes : MonoBehaviour
         {
             if (sampleCube!=null)
             {
-                sampleCube[i].transform.localScale = new Vector3(10, (AudioPeer._samples[i] * maxScale) +2, 10);
+                sampleCube[i].transform.localScale = new Vector3(10, ((AudioPeer._samplesLeft[i] + AudioPeer._samplesRight[i]) * maxScale) + 2, 10);
             }
         }
     }
