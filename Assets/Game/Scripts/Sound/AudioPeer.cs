@@ -15,6 +15,9 @@ public class AudioPeer : MonoBehaviour
     public static float[] audioBand = new float[8];
     public static float[] audioBandBuffer = new float[8];
 
+    public static float amplitude, amplitudeBuffer;
+    float amiplitudeHighest;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +31,25 @@ public class AudioPeer : MonoBehaviour
         MakeFrequencyBands();
         BandBuffer();
         CreateAudioBands();
+        GetAmplitude();
+    }
+
+    void GetAmplitude()
+    {
+        float currentAmplitude = 0;
+        float currentAmplitudeBuffer = 0;
+        for (int i = 0; i < 8; i++)
+        {
+            currentAmplitude += audioBand[i];
+            currentAmplitudeBuffer += audioBandBuffer[i];
+        }
+
+        if(currentAmplitude>amiplitudeHighest)
+        {
+            amiplitudeHighest = currentAmplitude;
+        }
+        amiplitudeHighest = currentAmplitude / amiplitudeHighest;
+        amplitudeBuffer = currentAmplitudeBuffer / amiplitudeHighest;
     }
     void CreateAudioBands()
     {
@@ -39,6 +61,10 @@ public class AudioPeer : MonoBehaviour
             }
             audioBand[i] = (freqBand[i] / freqBandHighest[i]);
             audioBandBuffer[i] = (bandBuffer[i] / freqBandHighest[i]);
+
+            //Color _tempDiffuseColor = new Color(color.r * AudioPeer.audioBand[i], color.g * AudioPeer.audioBand[i], color.b * AudioPeer.audioBand[i], 1);
+
+            //material.SetColor("_Color", _tempDiffuseColor);
         }
     }
 
@@ -62,6 +88,8 @@ public class AudioPeer : MonoBehaviour
                 bufferDecrease[g] *= 1.2f;
 
             }
+
+            
         }
     }
 
