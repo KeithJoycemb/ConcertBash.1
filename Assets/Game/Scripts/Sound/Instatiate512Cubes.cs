@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Instatiate512Cubes : MonoBehaviour
 {
+   
     public GameObject sampleCubePreFab;
     GameObject[] sampleCube = new GameObject[512];
     public float maxScale;

@@ -8,16 +8,26 @@ public class AudioPeer : MonoBehaviour
     AudioSource _audioSource;
     public static float[] _samplesLeft = new float[512];
     public static float[] _samplesRight = new float[512];
-    float[] freqBand = new float[8];
-    float[] bandBuffer = new float[8];
-    float[] bufferDecrease = new float[8];
+    private float[] freqBand = new float[8];
+    private float[] bandBuffer = new float[8];
+    private float[] bufferDecrease = new float[8];
 
-    float[] freqBandHighest = new float[8];
-    public static float[] audioBand = new float[8];
-    public static float[] audioBandBuffer = new float[8];
+    private float[] freqBandHighest = new float[8];
+
+    //audio 64
+    private float[] freqBand64 = new float[64];
+    private float[] bandBuffer64 = new float[64];
+    private float[] bufferDecrease64 = new float[64];
+    private float[] freqBandHighest64 = new float[64];
+    public float[] audioBand64;
+    public float[] audioBandBuffer64;
+
+
+    public static float[] audioBand;
+    public static float[] audioBandBuffer;
 
     public static float amplitude, amplitudeBuffer;
-    float amiplitudeHighest;
+    private float amiplitudeHighest;
     public float audioProfile;
 
     public enum _channel { Stereo, Left, Right };
@@ -29,6 +39,10 @@ public class AudioPeer : MonoBehaviour
     {
         _audioSource = GetComponent<AudioSource>();
         AudioProfile(audioProfile);
+        audioBand = new float[8];
+        audioBandBuffer = new float[8];
+        audioBand64 = new float[64];
+        audioBandBuffer64 = new float[64];
     }
 
     // Update is called once per frame
@@ -39,6 +53,9 @@ public class AudioPeer : MonoBehaviour
         BandBuffer();
         CreateAudioBands();
         GetAmplitude();
+        MakeFrequencyBands64();
+        BandBuffer64();
+        CreateAudioBands64();
     }
 
     void AudioProfile(float audioProfile)
@@ -77,9 +94,7 @@ public class AudioPeer : MonoBehaviour
             audioBand[i] = (freqBand[i] / freqBandHighest[i]);
             audioBandBuffer[i] = (bandBuffer[i] / freqBandHighest[i]);
 
-            //Color _tempDiffuseColor = new Color(color.r * AudioPeer.audioBand[i], color.g * AudioPeer.audioBand[i], color.b * AudioPeer.audioBand[i], 1);
-
-            //material.SetColor("_Color", _tempDiffuseColor);
+           
         }
     }
 
@@ -141,6 +156,85 @@ public class AudioPeer : MonoBehaviour
             average /= count;
 
             freqBand[i] = average * 10;
+        }
+
+    }
+
+    void BandBuffer64()
+    {
+        for (int g = 0; g < 8; g++)
+        {
+            if (freqBand64[g] > bandBuffer64[g])
+            {
+                bandBuffer64[g] = freqBand64[g];
+                bufferDecrease64[g] = 0.005f;
+            }
+            if (freqBand64[g] < bandBuffer64[g])
+            {
+                bandBuffer64[g] -= bufferDecrease64[g];
+                bufferDecrease64[g] *= 1.2f;
+
+            }
+
+
+        }
+    }
+
+    void CreateAudioBands64()
+    {
+        for (int i = 0; i < 64; i++)
+        {
+            if (freqBand64[i] > freqBandHighest64[i])
+            {
+                freqBandHighest64[i] = freqBand64[i];
+            }
+            audioBand64[i] = (freqBand64[i] / freqBandHighest64[i]);
+            audioBandBuffer64[i] = (bandBuffer64[i] / freqBandHighest64[i]);
+
+
+        }
+    }
+        void MakeFrequencyBands64()
+    {
+        int count = 0;
+        int sampleCount = 1;
+        int power = 0;
+
+        for (int i = 0; i < 64; i++)
+        {
+
+            
+           
+            float average = 0;
+           
+            if (i == 16 ||i==32 ||i==40 ||i==48 ||i==56)
+            {
+                power++;
+                sampleCount = (int)Mathf.Pow(2, power);
+                if (power ==3)
+                {
+                    sampleCount -= 2;
+                }
+            }
+            for (int j = 0; j < sampleCount; j++)
+            {
+                if (channel == _channel.Stereo)
+                {
+                    average += _samplesLeft[count] + _samplesRight[count] * (count + 1);
+                }
+                if (channel == _channel.Left)
+                {
+                    average += _samplesLeft[count] * (count + 1);
+                }
+                if (channel == _channel.Right)
+                {
+                    average += _samplesRight[count] * (count + 1);
+                }
+                count++;
+            }
+            average /= count;
+
+            freqBand64[i] = average * 80;
         }
 
     }
