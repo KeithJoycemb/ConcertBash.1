@@ -237,6 +237,9 @@ MonoBehaviour:
   startScale: 1
   scaleMultiplier: 10
   useBuffer: 1
+  red: 6.4
+  green: 6.4
+  blue: 16
 --- !u!1 &39129307
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +470,9 @@ MonoBehaviour:
   startScale: 1
   scaleMultiplier: 10
   useBuffer: 1
+  red: 0.4
+  green: 0.4
+  blue: 1
 --- !u!1 &53984934
 GameObject:
   m_ObjectHideFlags: 0
@@ -1074,6 +1080,9 @@ MonoBehaviour:
   startScale: 1
   scaleMultiplier: 10
   useBuffer: 1
+  red: 3.2
+  green: 3.2
+  blue: 8
 --- !u!1 &441383894
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,6 +1197,9 @@ MonoBehaviour:
   startScale: 1
   scaleMultiplier: 10
   useBuffer: 1
+  red: 0.1
+  green: 0.1
+  blue: 0.5
 --- !u!1 &455172823
 GameObject:
   m_ObjectHideFlags: 0
@@ -1516,6 +1528,9 @@ MonoBehaviour:
   startScale: 1
   scaleMultiplier: 10
   useBuffer: 1
+  red: 1.6
+  green: 1.6
+  blue: 4
 --- !u!1 &531996449
 GameObject:
   m_ObjectHideFlags: 0
@@ -1941,6 +1956,9 @@ MonoBehaviour:
   startScale: 1
   scaleMultiplier: 10
   useBuffer: 1
+  red: 0.4
+  green: 0.4
+  blue: 1
 --- !u!1 &1025001904
 GameObject:
   m_ObjectHideFlags: 0
@@ -2242,6 +2260,9 @@ MonoBehaviour:
   startScale: 1
   scaleMultiplier: 10
   useBuffer: 1
+  red: 0.2
+  green: 0.2
+  blue: 1
 --- !u!1 &1467235053
 GameObject:
   m_ObjectHideFlags: 0
@@ -3536,3 +3557,6 @@ MonoBehaviour:
   startScale: 1
   scaleMultiplier: 10
   useBuffer: 1
+  red: 0.8
+  green: 0.8
+  blue: 2

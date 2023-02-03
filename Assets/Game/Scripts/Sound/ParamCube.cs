@@ -9,7 +9,8 @@ public class ParamCube : MonoBehaviour
     public float startScale, scaleMultiplier;
     public bool useBuffer;
     Material material;
-    
+    public float red, green, blue;
+
 
 
 
@@ -18,7 +19,7 @@ public class ParamCube : MonoBehaviour
     void Start()
     {
         material = GetComponent<MeshRenderer>().materials[0];
-        material.EnableKeyword("_EMISSION");
+        
     }
 
     // Update is called once per frame
@@ -27,20 +28,27 @@ public class ParamCube : MonoBehaviour
         
 
         if (useBuffer) 
-        { 
+        {
             transform.localScale = new Vector3(transform.localScale.x, (AudioPeer.audioBandBuffer[band] *scaleMultiplier)+ startScale, transform.localScale.z);
-            Color color = new Color(AudioPeer.audioBandBuffer[band], AudioPeer.audioBandBuffer[band], AudioPeer.audioBandBuffer[band]);
-            material.SetColor("EmissionColor", color);
+            //Color color = new Color(red*AudioPeer.audioBandBuffer[band], green*AudioPeer.audioBandBuffer[band], blue*AudioPeer.audioBandBuffer[band]);
+            //material.SetColor("EmissionColor", color);
+            
+
+            Color _color = new Color(red * AudioPeer.amplitudeBuffer, green * AudioPeer.amplitudeBuffer, blue * AudioPeer.amplitudeBuffer);
+            material.SetColor("_EmissionColor", _color);
         }
         if (!useBuffer)
         {
             transform.localScale = new Vector3(transform.localScale.x, (AudioPeer.audioBand[band] * scaleMultiplier) + startScale, transform.localScale.z);
-            //Color color = new Color(AudioPeer.audioBand[band], AudioPeer.audioBand[band], AudioPeer.audioBand[band]);
-            // material.SetColor("EmissionColor", color);
-            Color _color = new Color(1, 0, 0, 1); //which is red
-            material.SetColor("_EmissionColor", _color * AudioPeer.audioBand[0]);
-            // material.SetColor("_EmissionColor", _color * AudioPeer.audioBand[0] * someMultiplierFloat);
-           
+            //Color color = new Color(red*AudioPeer.audioBand[band], green*AudioPeer.audioBand[band], blue*AudioPeer.audioBand[band]);
+
+
+            //material.SetColor("_EmissionColor", color * AudioPeer.audioBand[0]);
+            
+            Color _color = new Color(red * AudioPeer.amplitude, green * AudioPeer.amplitude, blue * AudioPeer.amplitude);
+            material.SetColor("_EmissionColor", _color);
+
+
         }
     }
 }
