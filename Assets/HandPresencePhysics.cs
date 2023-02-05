@@ -7,11 +7,30 @@ public class HandPresencePhysics : MonoBehaviour
     public Transform target;
     private Rigidbody rb;
     public Renderer nonPhysicalHand;
-    public float showNonPhysicalHandDistance = 0.05f;
-
+    public float showNonPhysicalHandDistance = 5f;
+    private Collider[] handCollider;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        handCollider = GetComponentsInChildren<Collider>();
+    }
+    public void EnableHandCollider()
+    {
+        foreach(var item in handCollider)
+        {
+            item.enabled = true;
+        }
+    }
+    public void DisableHandCollider()
+    {
+        foreach (var item in handCollider)
+        {
+            item.enabled = false;
+        }
+    }
+    public void EnableHandColliderDelay(float delay)
+    {
+        Invoke("EnablHandCollider", delay);
     }
     private void Update()
     {

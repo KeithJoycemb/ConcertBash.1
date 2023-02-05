@@ -9,16 +9,16 @@ namespace Game
         AudioSource typeAudio;
         bool typePlay;
         bool mute;
-        public GameObject interactable;
-        public Renderer cubeMaterial;
+        /*public GameObject interactable;
+        public Renderer cubeMaterial;*/
         bool inContact;
         private void Start()
         {
             typeAudio = GetComponent<AudioSource>();
             typePlay = false;
             mute = typeAudio.mute;
-            interactable = GetComponent<GameObject>();
-            cubeMaterial = interactable.GetComponent<Renderer>();
+            /*interactable = GetComponent<GameObject>();
+            cubeMaterial = interactable.GetComponent<Renderer>();*/
             inContact = false;
 
         }
@@ -28,10 +28,10 @@ namespace Game
             {
                 typeAudio.mute = false;
             }
-            if (inContact)
+            /*if (inContact)
                 cubeMaterial.material.SetColor("_Color", Color.red);
             else
-                cubeMaterial.material.SetColor("_Color", Color.cyan);
+                cubeMaterial.material.SetColor("_Color", Color.cyan);*/
         }
         private void OnTriggerEnter(Collider other)
         {
