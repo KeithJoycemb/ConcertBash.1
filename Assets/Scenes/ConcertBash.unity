@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5158,6 +5158,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 302094329}
+  - component: {fileID: 302094330}
   m_Layer: 0
   m_Name: Audio trigger
   m_TagString: Untagged
@@ -5190,6 +5191,24 @@ RectTransform:
   m_AnchoredPosition: {x: -4.3, y: 6.2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &302094330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302094328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 071e94dc90b5f0b44a160e2f00bf5d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalSource: {fileID: 849271669}
+  fracturedSource: {fileID: 4914167816702487147, guid: 8240c92f1c48ee846a0e7d0ab61a80f5, type: 3}
+  minForce: 5
+  maxForce: 100
+  explosionradius: 10
+  fragScaleFactor: 1
 --- !u!1 &305018235
 GameObject:
   m_ObjectHideFlags: 0
@@ -5837,8 +5856,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c5ec011cfa0f04eb8215454716e9b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: {fileID: 0}
-  cubeMaterial: {fileID: 0}
 --- !u!114 &445212157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7284,8 +7301,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c5ec011cfa0f04eb8215454716e9b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: {fileID: 0}
-  cubeMaterial: {fileID: 0}
 --- !u!114 &750662801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7669,8 +7684,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c5ec011cfa0f04eb8215454716e9b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: {fileID: 0}
-  cubeMaterial: {fileID: 0}
 --- !u!54 &849271676
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13577,8 +13590,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c5ec011cfa0f04eb8215454716e9b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: {fileID: 0}
-  cubeMaterial: {fileID: 0}
 --- !u!54 &1342681982
 Rigidbody:
   m_ObjectHideFlags: 0
