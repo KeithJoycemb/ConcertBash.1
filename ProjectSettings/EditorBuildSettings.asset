@@ -6,14 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/UIStartingScreen.unity
+    guid: 9ac002dc00c249141a01ba8d4a201727
+  - enabled: 1
     path: Assets/Scenes/ConcertBash.unity
     guid: a056e6bf4c801984580b4ac050b94df9
   - enabled: 1
     path: Assets/Scenes/Environment.unity
     guid: 3decdd31716d9b64ba30295ff76a9a77
   - enabled: 1
-    path: Assets/Scenes/LightEffects.unity
-    guid: 8f0b1a23a43ee344383f47e94e18d66d
+    path: Assets/Scenes/AudioVisual.unity
+    guid: 55ecb0331492c9445bc97c5fa84d8074
   - enabled: 1
     path: Assets/Scenes/EndScreen.unity
     guid: 527fdbb924df59b40ac1f803e68a4d5c
