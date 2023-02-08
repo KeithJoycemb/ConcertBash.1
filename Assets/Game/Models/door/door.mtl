@@ -1,0 +1,162 @@
+# Apple ModelI/O MTL File: door.mtl
+
+newmtl initialShadingGroup
+	map_Kd initialShadingGroup-color.png
+	Kd 1 1 1
+	Ka 0 0 0
+	Ks 0
+	ao 0
+	subsurface 0
+	map_metallic initialShadingGroup-metallic.png
+	specularTint 0
+	map_roughness initialShadingGroup-roughness.png
+	anisotropicRotation 0
+	sheen 0.05
+	sheenTint 0
+	clearCoat 0
+	clearCoatGloss 0
+
+newmtl FrameSG
+	map_Kd FrameSG-color.png
+	Kd 1 1 1
+	Ka 0 0 0
+	Ks 0
+	ao 0
+	subsurface 0
+	map_metallic FrameSG-metallic.png
+	specularTint 0
+	map_roughness FrameSG-roughness.png
+	anisotropicRotation 0
+	sheen 0.05
+	sheenTint 0
+	clearCoat 0
+	clearCoatGloss 0
+
+newmtl object1SG
+	map_Kd object1SG-color.png
+	Kd 1 1 1
+	Ka 0 0 0
+	Ks 0
+	ao 0
+	subsurface 0
+	map_metallic object1SG-metallic.png
+	specularTint 0
+	map_roughness object1SG-roughness.png
+	anisotropicRotation 0
+	sheen 0.05
+	sheenTint 0
+	clearCoat 0
+	clearCoatGloss 0
+
+newmtl Tube2SG
+	map_Kd Tube2SG-color.png
+	Kd 1 1 1
+	Ka 0 0 0
+	Ks 0
+	ao 0
+	subsurface 0
+	map_metallic Tube2SG-metallic.png
+	specularTint 0
+	map_roughness Tube2SG-roughness.png
+	anisotropicRotation 0
+	sheen 0.05
+	sheenTint 0
+	clearCoat 0
+	clearCoatGloss 0
+
+newmtl GlassFrameSG
+	map_Kd GlassFrameSG-color.png
+	Kd 1 1 1
+	Ka 0 0 0
+	Ks 0
+	ao 0
+	subsurface 0
+	map_metallic GlassFrameSG-metallic.png
+	specularTint 0
+	map_roughness GlassFrameSG-roughness.png
+	anisotropicRotation 0
+	sheen 0.05
+	sheenTint 0
+	clearCoat 0
+	clearCoatGloss 0
+
+newmtl GlassFrame_ncl1_1SG
+	map_Kd GlassFrame_ncl1_1SG-color.png
+	Kd 1 1 1
+	Ka 0 0 0
+	Ks 0
+	ao 0
+	subsurface 0
+	map_metallic GlassFrame_ncl1_1SG-metallic.png
+	specularTint 0
+	map_roughness GlassFrame_ncl1_1SG-roughness.png
+	anisotropicRotation 0
+	sheen 0.05
+	sheenTint 0
+	clearCoat 0
+	clearCoatGloss 0
+
+newmtl window1SG
+	map_Kd window1SG-color.png
+	Kd 1 1 1
+	Ka 0 0 0
+	Ks 0
+	ao 0
+	subsurface 0
+	map_metallic window1SG-metallic.png
+	specularTint 0
+	map_roughness window1SG-roughness.png
+	anisotropicRotation 0
+	sheen 0.05
+	sheenTint 0
+	clearCoat 0
+	clearCoatGloss 0
+
+newmtl object2SG
+	map_Kd object2SG-color.png
+	Kd 1 1 1
+	Ka 0 0 0
+	Ks 0
+	ao 0
+	subsurface 0
+	map_metallic object2SG-metallic.png
+	specularTint 0
+	map_roughness object2SG-roughness.png
+	anisotropicRotation 0
+	sheen 0.05
+	sheenTint 0
+	clearCoat 0
+	clearCoatGloss 0
+
+newmtl TubeSG
+	map_Kd TubeSG-color.png
+	Kd 1 1 1
+	Ka 0 0 0
+	Ks 0
+	ao 0
+	subsurface 0
+	map_metallic TubeSG-metallic.png
+	specularTint 0
+	map_roughness TubeSG-roughness.png
+	anisotropicRotation 0
+	sheen 0.05
+	sheenTint 0
+	clearCoat 0
+	clearCoatGloss 0
+
+newmtl window2SG
+	map_Kd window2SG-color.png
+	Kd 1 1 1
+	Ka 0 0 0
+	Ks 0
+	ao 0
+	subsurface 0
+	map_metallic window2SG-metallic.png
+	specularTint 0
+	map_roughness window2SG-roughness.png
+	anisotropicRotation 0
+	sheen 0.05
+	sheenTint 0
+	clearCoat 0
+	clearCoatGloss 0
+
