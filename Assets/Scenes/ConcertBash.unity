@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.1731976, g: 0.21648031, b: 0.29850885, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -362,15 +362,15 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.18039216, g: 0.83137256, b: 0.019607844, a: 1}
   m_Intensity: 1.5
-  m_Range: 10
-  m_SpotAngle: 45.4
+  m_Range: 100
+  m_SpotAngle: 97
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.14
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -5444,7 +5444,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &302094329
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5512,7 +5512,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.18039216, g: 0.83137256, b: 0.019607844, a: 1}
+  m_Color: {r: 0.19215687, g: 0.14509805, b: 0.5019608, a: 1}
   m_Intensity: 1.5
   m_Range: 10
   m_SpotAngle: 30
@@ -5757,11 +5757,11 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.18039216, g: 0.83137256, b: 0.019607844, a: 1}
-  m_Intensity: 1.5
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
+  m_Color: {r: 0.19084688, g: 0.14465407, b: 0.5, a: 1}
+  m_Intensity: 10
+  m_Range: 50
+  m_SpotAngle: 87
+  m_InnerSpotAngle: 10
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -12972,6 +12972,7 @@ GameObject:
   - component: {fileID: 947916605}
   - component: {fileID: 947916604}
   - component: {fileID: 947916603}
+  - component: {fileID: 947916607}
   m_Layer: 0
   m_Name: Stage Light (1)
   m_TagString: Untagged
@@ -13059,6 +13060,21 @@ Transform:
   m_Father: {fileID: 1612470684}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &947916607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947916602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330281ca90bafbe4786880d2e1e675d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  band: 7
+  minIntensity: 1
+  maxIntensity: 10
 --- !u!1 &961019397
 GameObject:
   m_ObjectHideFlags: 0
@@ -13121,7 +13137,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -14185,6 +14201,7 @@ GameObject:
   - component: {fileID: 1550730540}
   - component: {fileID: 1550730539}
   - component: {fileID: 1550730538}
+  - component: {fileID: 1550730542}
   m_Layer: 0
   m_Name: Stage Light
   m_TagString: Untagged
@@ -14272,6 +14289,21 @@ Transform:
   m_Father: {fileID: 1612470684}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1550730542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550730537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330281ca90bafbe4786880d2e1e675d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  band: 1
+  minIntensity: 10
+  maxIntensity: 50
 --- !u!1 &1612470683
 GameObject:
   m_ObjectHideFlags: 0
