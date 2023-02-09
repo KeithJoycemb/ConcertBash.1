@@ -1204,6 +1204,35 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 422817735}
   m_Mesh: {fileID: -9094789805197026203, guid: be684d1f71320a84d81d1ab561382847, type: 3}
+--- !u!1 &455154963 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3957782524123411102, guid: cc8c2a05278186e4f9a1493f98148e9e, type: 3}
+  m_PrefabInstance: {fileID: 2139868587}
+  m_PrefabAsset: {fileID: 0}
+--- !u!167 &455154967
+AudioReverbZone:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455154963}
+  m_Enabled: 1
+  m_MinDistance: 10
+  m_MaxDistance: 52.46
+  m_ReverbPreset: 8
+  m_Room: -1000
+  m_RoomHF: -500
+  m_DecayTime: 3.92
+  m_DecayHFRatio: 0.7
+  m_Reflections: -1230
+  m_ReflectionsDelay: 0.02
+  m_Reverb: -2
+  m_ReverbDelay: 0.029
+  m_HFReference: 5000
+  m_Diffusion: 100
+  m_Density: 100
+  m_LFReference: 250
+  m_RoomLF: 0
 --- !u!1001 &478252534
 PrefabInstance:
   m_ObjectHideFlags: 0
