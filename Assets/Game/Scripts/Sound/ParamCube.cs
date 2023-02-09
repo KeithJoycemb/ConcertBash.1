@@ -19,7 +19,6 @@ public class ParamCube : MonoBehaviour
     void Start()
     {
         material = GetComponent<MeshRenderer>().materials[0];
-        
     }
 
     // Update is called once per frame
