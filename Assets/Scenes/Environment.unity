@@ -1296,6 +1296,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7246754842597091125, guid: d396d6c24b725294db5d406c2f80c83e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3de412689878cca49a9378b8b84a880d, type: 2}
+    - target: {fileID: -4543896427471565337, guid: d396d6c24b725294db5d406c2f80c83e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3de412689878cca49a9378b8b84a880d, type: 2}
     - target: {fileID: 919132149155446097, guid: d396d6c24b725294db5d406c2f80c83e, type: 3}
       propertyPath: m_Name
       value: stool (2)
@@ -2470,6 +2478,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7246754842597091125, guid: d396d6c24b725294db5d406c2f80c83e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3de412689878cca49a9378b8b84a880d, type: 2}
+    - target: {fileID: -4543896427471565337, guid: d396d6c24b725294db5d406c2f80c83e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3de412689878cca49a9378b8b84a880d, type: 2}
     - target: {fileID: 919132149155446097, guid: d396d6c24b725294db5d406c2f80c83e, type: 3}
       propertyPath: m_Name
       value: stool (3)
@@ -2930,6 +2946,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7246754842597091125, guid: d396d6c24b725294db5d406c2f80c83e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3de412689878cca49a9378b8b84a880d, type: 2}
+    - target: {fileID: -4543896427471565337, guid: d396d6c24b725294db5d406c2f80c83e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3de412689878cca49a9378b8b84a880d, type: 2}
     - target: {fileID: 919132149155446097, guid: d396d6c24b725294db5d406c2f80c83e, type: 3}
       propertyPath: m_Name
       value: stool (1)
@@ -3082,6 +3106,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7246754842597091125, guid: d396d6c24b725294db5d406c2f80c83e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3de412689878cca49a9378b8b84a880d, type: 2}
+    - target: {fileID: -4543896427471565337, guid: d396d6c24b725294db5d406c2f80c83e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3de412689878cca49a9378b8b84a880d, type: 2}
     - target: {fileID: 919132149155446097, guid: d396d6c24b725294db5d406c2f80c83e, type: 3}
       propertyPath: m_Name
       value: stool
