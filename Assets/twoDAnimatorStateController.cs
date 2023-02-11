@@ -9,6 +9,8 @@ public class twoDAnimatorStateController : MonoBehaviour
     float velocityX = 0.0f;
     public float acceleration = 2.0f;
     public float deceleration = 2.0f;
+    public float maximumWalkVelocity = 0.5f;
+    public float MaximumRunVelocity = 2.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -24,36 +26,50 @@ public class twoDAnimatorStateController : MonoBehaviour
         bool rightPressed = Input.GetKey("d");
         bool runPressed = Input.GetKey("left shift");
 
-        if(forwardPressed && VelocityZ < 0.5f && !runPressed)
+        float currentMaxVelocity = runPressed ? MaximumRunVelocity : maximumWalkVelocity;
+
+        if(forwardPressed && velocityZ < currentMaxVelocity )
         {
-            VelocityZ += Time.deltaTime * acceleration;
+            velocityZ += Time.deltaTime * acceleration;
         }
-        if(leftPressed && VelocityX > -0.5F && !runPressed)
+        if(leftPressed && velocityX > -currentMaxVelocity )
         {
-            VelocityX -= Time.deltaTime * acceleration;
+            velocityX -= Time.deltaTime * acceleration;
         }
-        if(rightPressed && VelocityX<0.5f && !runPressed)
+        if(rightPressed && velocityX < currentMaxVelocity )
         {
-            VelocityX += Time.deltaTime * acceleration;
+            velocityX += Time.deltaTime * acceleration;
         }
-        if(!forwardPressed && VelocityZ <0.0F)
+        if(!forwardPressed && velocityZ >0.0f)
         {
-            VelocityZ = 0.0f;
+            velocityZ -= Time.deltaTime * deceleration;
         }
-        if(!leftPressed && VelocityX <0.0F)
+        if(!forwardPressed && velocityZ < 0.0F)
         {
-            VelocityX += Time.deltaTime * deceleration;
+            velocityZ = 0.0f;
         }
-        if(!rightPressed && VelocityX >0.0f)
+        if(!leftPressed && velocityX <0.0F)
         {
-            VelocityX -= Time.deltaTime * deceleration;
+            velocityX += Time.deltaTime * deceleration;
         }
-        if(!leftPressed &&!rightPressed&& VelocityX !=0.0f &&(VelocityX >-0.05f && VelocityX<0.05f))
+        if(!rightPressed && velocityX >0.0f)
         {
-            VelocityX = 0.0f;
+            velocityX -= Time.deltaTime * deceleration;
         }
-        animator.SetFloat("velocityZ", VelocityZ);
-        animator.SetFloat("velocityX", VelocityX);
+        if(!leftPressed && !rightPressed && velocityX !=0.0f &&(velocityX > -0.05f && velocityX < 0.05f))
+        {
+            velocityX = 0.0f;
+        }
+        if(forwardPressed && runPressed && velocityZ > currentMaxVelocity)
+        {
+            velocityZ = currentMaxVelocity;
+        }
+        else if(forwardPressed && velocityZ > currentMaxVelocity)
+        {
+            velocityZ -= Time.deltaTime * deceleration;
+        }
+        animator.SetFloat("Velocity Z", velocityZ);
+        animator.SetFloat("Velocity X", velocityX);
 
 
     }
