@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class AnimationAndMovementController : MonoBehaviour
 {
@@ -22,12 +23,16 @@ public class AnimationAndMovementController : MonoBehaviour
         playerInput = new PlayerInput();
         characterController = GetComponent<CharacterController>();
 
-        playerInput.CharacterControls.Move.started += context =>
-        {
-            currentMovementInput = context.ReadValue<Vector2>(); // Holds the current input vectors
-            currentMovement.x = currentMovementInput.x;
-            currentMovement.z = currentMovementInput.y;
-        };
+        playerInput.CharacterControls.Move.started += onMovementInput;
+        playerInput.CharacterControls.Move.canceled += onMovementInput;
+        playerInput.CharacterControls.Move.performed += onMovementInput;
+    }
+
+    void onMovementInput (InputAction.CallbackContext context)
+    {
+        currentMovementInput = context.ReadValue<Vector2>(); // Holds the current input vectors
+        currentMovement.x = currentMovementInput.x;
+        currentMovement.z = currentMovementInput.y;
     }
 
     void Start()
@@ -38,7 +43,7 @@ public class AnimationAndMovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        characterController.Move(CurrentMovement);
+        characterController.Move(CurrentMovement* Time.deltaTime);
     }
 
     void OnEnable()
