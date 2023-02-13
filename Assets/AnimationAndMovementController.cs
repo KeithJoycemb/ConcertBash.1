@@ -19,8 +19,9 @@ public class AnimationAndMovementController : MonoBehaviour
     Vector3 currentRunMovement;
     bool isMovementPressed;
     bool isRunPressed;
-    float rotationFactorPerFrame=8.0f;
-    float runMultiplier = 3.0f;
+    float speed =4.5f;
+    float rotationFactorPerFrame=15.0f;
+    float runMultiplier = 4.0f;
 
     public Vector2 CurrentMovementInput { get => currentMovementInput; set => currentMovementInput = value; }
     public Vector3 CurrentMovement { get => currentMovement; set => currentMovement = value; }
@@ -70,10 +71,10 @@ public class AnimationAndMovementController : MonoBehaviour
     void onMovementInput (InputAction.CallbackContext context)
     {
         currentMovementInput = context.ReadValue<Vector2>(); // Holds the current input vectors
-        currentMovement.x = currentMovementInput.x;
-        currentMovement.z = currentMovementInput.y;
-        currentRunMovement.x = currentMovementInput.x * runMultiplier;
-        currentRunMovement.z = currentMovementInput.y * runMultiplier;
+        currentMovement.x = currentMovementInput.x * speed;
+        currentMovement.z = currentMovementInput.y * speed;
+        currentRunMovement.x = currentMovementInput.x *speed* runMultiplier;
+        currentRunMovement.z = currentMovementInput.y *speed* runMultiplier;
         isMovementPressed = currentMovementInput.x != 0 || currentMovementInput.y != 0;
     }
 
