@@ -23,8 +23,8 @@ public class AnimationAndMovementController : MonoBehaviour
 
     bool isJumpPressed = false;
     float initialJumpVelocity;
-    float maxJumpHeight;
-    float maxJumpTime;
+    float maxJumpHeight=10.0f;
+    float maxJumpTime =1f;
     bool isJumping = false;
 
 
@@ -33,7 +33,7 @@ public class AnimationAndMovementController : MonoBehaviour
     float rotationFactorPerFrame = 15.0f;
     float runMultiplier = 4.0f;
 
-    float gravity = -2f;
+    float gravity = -9.8f;
     float groundedGravity = -0.5f;
 
 
@@ -58,8 +58,10 @@ public class AnimationAndMovementController : MonoBehaviour
         playerInput.CharacterControls.Move.performed += onMovementInput;
         playerInput.CharacterControls.Run.started += onRun;
         playerInput.CharacterControls.Run.canceled += onRun;
-        playerInput.CharacterControls.Run.started += onJump;
-        playerInput.CharacterControls.Run.canceled += onJump;
+        playerInput.CharacterControls.Jump.started += onJump;
+        playerInput.CharacterControls.Jump.canceled += onJump;
+
+        setupJumpVariables();
     }
 
 
@@ -70,7 +72,7 @@ public class AnimationAndMovementController : MonoBehaviour
             isJumping = true;
             currentMovement.y = initialJumpVelocity;
             currentRunMovement.y = initialJumpVelocity;
-        }else if(!isJumping && isJumping && characterController.isGrounded)
+        }else if(!isJumpPressed && isJumping && characterController.isGrounded)
         {
             isJumping = false;
         }
