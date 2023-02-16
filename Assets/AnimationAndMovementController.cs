@@ -23,8 +23,8 @@ public class AnimationAndMovementController : MonoBehaviour
 
     bool isJumpPressed = false;
     float initialJumpVelocity;
-    float maxJumpHeight=10.0f;
-    float maxJumpTime =1f;
+    float maxJumpHeight=5.0f;
+    float maxJumpTime =0.8f;
     bool isJumping = false;
 
 
@@ -32,7 +32,6 @@ public class AnimationAndMovementController : MonoBehaviour
     float speed = 4.5f;
     float rotationFactorPerFrame = 15.0f;
     float runMultiplier = 4.0f;
-
     float gravity = -9.8f;
     float groundedGravity = -0.5f;
 
@@ -70,8 +69,8 @@ public class AnimationAndMovementController : MonoBehaviour
         if (!isJumping && characterController.isGrounded && isJumpPressed)
         {
             isJumping = true;
-            currentMovement.y = initialJumpVelocity;
-            currentRunMovement.y = initialJumpVelocity;
+            currentMovement.y = initialJumpVelocity*1f;
+            currentRunMovement.y = initialJumpVelocity*1f;
         }else if(!isJumpPressed && isJumping && characterController.isGrounded)
         {
             isJumping = false;
@@ -157,15 +156,28 @@ public class AnimationAndMovementController : MonoBehaviour
 
     void handleGravity()
     {
+        bool isFalling = currentMovement.y <= 0.0f||!isJumpPressed;
+        float fallMultiplier = 2.0f;
         if (characterController.isGrounded)
         {
             currentMovement.y = groundedGravity;
             currentRunMovement.y = groundedGravity;
         }
+        else if (isFalling)
+        {
+            float previousYVelocity = currentMovement.y;
+            float newYVelocity = currentMovement.y + (gravity * fallMultiplier * Time.deltaTime);
+            float nextYvelocity = (previousYVelocity + newYVelocity) * .5f;
+            currentMovement.y = nextYvelocity;
+            currentRunMovement.y = nextYvelocity;
+        }
         else
         {
-            currentMovement.y += gravity * Time.deltaTime;
-            currentRunMovement.y += gravity * Time.deltaTime;
+            float previousYVelocity = currentMovement.y;
+            float newYVelocity = currentMovement.y + (gravity * Time.deltaTime);
+            float nextYVelocity = (previousYVelocity + newYVelocity) * .5f;
+            currentMovement.y = nextYVelocity;
+            currentRunMovement.y = nextYVelocity;
         }
     }
 
