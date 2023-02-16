@@ -26,6 +26,8 @@ public class AnimationAndMovementController : MonoBehaviour
     float maxJumpHeight=5.0f;
     float maxJumpTime =0.8f;
     bool isJumping = false;
+    int isJumpingHash;
+    bool isJumpAnimating = false;
 
 
     //players movement and speed 
@@ -50,6 +52,7 @@ public class AnimationAndMovementController : MonoBehaviour
 
         isWalkingHash = Animator.StringToHash("isWalking");
         isRunningHash = Animator.StringToHash("isRunning");
+        isJumpingHash = Animator.StringToHash("isJumping");
 
 
         playerInput.CharacterControls.Move.started += onMovementInput;
@@ -68,6 +71,8 @@ public class AnimationAndMovementController : MonoBehaviour
     {
         if (!isJumping && characterController.isGrounded && isJumpPressed)
         {
+            animator.SetBool(isJumpingHash, true);
+            isJumpAnimating = true;
             isJumping = true;
             currentMovement.y = initialJumpVelocity*1f;
             currentRunMovement.y = initialJumpVelocity*1f;
@@ -160,6 +165,12 @@ public class AnimationAndMovementController : MonoBehaviour
         float fallMultiplier = 2.0f;
         if (characterController.isGrounded)
         {
+            if (isJumpAnimating)
+            {
+                animator.SetBool(isJumpingHash, false);
+                isJumpAnimating = false;
+            }
+            animator.SetBool("isJumping", false);
             currentMovement.y = groundedGravity;
             currentRunMovement.y = groundedGravity;
         }
@@ -167,7 +178,7 @@ public class AnimationAndMovementController : MonoBehaviour
         {
             float previousYVelocity = currentMovement.y;
             float newYVelocity = currentMovement.y + (gravity * fallMultiplier * Time.deltaTime);
-            float nextYvelocity = (previousYVelocity + newYVelocity) * .5f;
+            float nextYvelocity = Mathf.Max((previousYVelocity + newYVelocity) * .5f,-20.0f);
             currentMovement.y = nextYvelocity;
             currentRunMovement.y = nextYvelocity;
         }
