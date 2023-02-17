@@ -12,6 +12,7 @@ public class AnimationAndMovementController : MonoBehaviour
 
     int isWalkingHash;
     int isRunningHash;
+    int jumpCountHash;
 
     // Start is called before the first frame update
     Vector2 currentMovementInput;
@@ -28,7 +29,7 @@ public class AnimationAndMovementController : MonoBehaviour
     bool isJumping = false;
     int isJumpingHash;
     bool isJumpAnimating = false;
-
+    int jumpCount = 0;
 
     //players movement and speed 
     float speed = 4.5f;
@@ -53,7 +54,7 @@ public class AnimationAndMovementController : MonoBehaviour
         isWalkingHash = Animator.StringToHash("isWalking");
         isRunningHash = Animator.StringToHash("isRunning");
         isJumpingHash = Animator.StringToHash("isJumping");
-
+        jumpCountHash = Animator.StringToHash("jumpCount");
 
         playerInput.CharacterControls.Move.started += onMovementInput;
         playerInput.CharacterControls.Move.canceled += onMovementInput;
@@ -74,11 +75,17 @@ public class AnimationAndMovementController : MonoBehaviour
             animator.SetBool(isJumpingHash, true);
             isJumpAnimating = true;
             isJumping = true;
+            jumpCount += 1;
+            animator.SetInteger(jumpCountHash, jumpCount);
             currentMovement.y = initialJumpVelocity*1f;
             currentRunMovement.y = initialJumpVelocity*1f;
         }else if(!isJumpPressed && isJumping && characterController.isGrounded)
         {
             isJumping = false;
+        }
+        if (jumpCount == 3)
+        {
+            jumpCount = 0;
         }
     }
 
