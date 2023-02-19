@@ -66,7 +66,15 @@ public class AnimationAndMovementController : MonoBehaviour
 
         setupJumpVariables();
     }
+    void onJump(InputAction.CallbackContext context)
+    {
+        _isJumpPressed = context.ReadValueAsButton();
+    }
 
+    void onRun(InputAction.CallbackContext context)
+    {
+        _isRunPressed = context.ReadValueAsButton();
+    }
 
     void handleJump()
     {
@@ -96,24 +104,7 @@ public class AnimationAndMovementController : MonoBehaviour
         _initialJumpVelocity = (2 * _maxJumpHeight) / timeToApex;
     }
 
-
-
-
-    void onJump(InputAction.CallbackContext context)
-    {
-        _isJumpPressed = context.ReadValueAsButton();
-    }
-
-    void onRun(InputAction.CallbackContext context)
-    {
-        _isRunPressed = context.ReadValueAsButton();
-    }
-
-    void onMovementInput(InputAction.CallbackContext context)
-    {
-        _currentMovementInput = context.ReadValue<Vector2>(); 
-        _isMovementPressed = _currentMovementInput.x != zero || _currentMovementInput.y != zero;
-    }
+   
     void handleRotation()
     {
         Vector3 positionToLookAt;
@@ -202,7 +193,11 @@ public class AnimationAndMovementController : MonoBehaviour
         handleGravity();
         handleJump();
     }
-
+     void onMovementInput(InputAction.CallbackContext context)
+    {
+        _currentMovementInput = context.ReadValue<Vector2>(); 
+        _isMovementPressed = _currentMovementInput.x != zero || _currentMovementInput.y != zero;
+    }
 
     void OnEnable()
     {
