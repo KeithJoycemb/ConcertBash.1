@@ -44,6 +44,21 @@ public class PlayerStateMachine : MonoBehaviour
     PlayerBaseState _currentState;
     PlayerStateFactory _states;
 
+    //getters and setters
+    public PlayerBaseState CurrentState { get { return _currentState; } set { _currentState = value; } }
+    public bool IsJumpPressed { get { return _isJumpPressed; }}
+    public Animator Animator { get { return _animator; }}
+    public int JumpCount { get { return _jumpCount; } set { _jumpCount = value; } }
+    public int JumpCountHash { get { return _jumpCountHash;} }
+    public int IsJumpingHash { get { return _isJumpingHash; }}
+    public bool IsJumping { set { _isJumping = value; } }
+    public float CurrentMovementY { get { return _currentMovement.y; } set { _currentMovement.y = value; } }
+    public float AppliedMovementY { get { return _appliedMovement.y; } set { _appliedMovement.y = value; } }
+    public bool IsJumpAnimating { set { _isJumpAnimating = value; } }
+    public float InitialJumpVelocity { get { return _initialJumpVelocity; }}
+
+
+
     void Awake()
     {
         // initially set reference variables
@@ -87,6 +102,7 @@ public class PlayerStateMachine : MonoBehaviour
     void Update()
     {
         handleRotation();
+        _currentState.UpdateState();
         _characterController.Move((_appliedMovement * _playerDefaultSpeed) * Time.deltaTime);
     }
     void handleRotation()
